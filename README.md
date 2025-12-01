@@ -1,16 +1,62 @@
+# Omniscan: An Intelligent News Digest System
+
+## Project Description
+
+This is the **Omniscan**, an AI-powered system that transforms the overwhelming flood of daily news into personalized, high-quality 3-minute digests. Built with Google's Agent Development Kit (ADK), this project demonstrates how modern multi-agent AI systems can solve real-world information overload problems through intelligent orchestration, quality assurance, and user-centric design.
+
+### The Problem It Solves
+
+In our information-saturated world, staying informed is both essential and exhausting. The average person encounters hundreds of news articles daily across multiple platforms, but lacks the time to read, process, and synthesize this information meaningfully. Traditional news aggregators simply list headlines; they don't understand context, don't filter for relevance, and don't adapt to individual interests.
+
+Omniscan addresses this by:
+- **Intelligently searching** for articles based on user-specified topics and time ranges
+- **Extracting and processing** full article content (not just headlines)
+- **Summarizing** each article with context and nuance
+- **Synthesizing** multiple sources into a coherent, readable digest
+- **Iteratively improving** quality through automated refinement loops
+- **Personalizing** the output to match requested reading time and depth
+
+### Technical Innovation
+
+This project showcases several advanced AI engineering patterns that make it production-ready:
+
+**Multi-Agent Architecture**: Rather than a single monolithic AI system, the Omniscan uses a specialized pipeline of AI agents, each optimized for a specific task—scraper, processor, summarizer, digest generator, and quality agents. This specialization allows each agent to excel at its domain, resulting in higher overall quality than a single general-purpose agent could achieve.
+
+**Automated Quality Assurance**: One of the most innovative aspects is the self-improving quality loop. The system doesn't just generate a digest once—it creates an initial version, evaluates it against quality criteria (clarity, completeness, structure, engagement), automatically refines it if quality is below threshold, and repeats until quality standards are met. This is implemented using ADK's `LoopAgent` pattern with custom validation checkers.
+
+**Parallel Processing**: The system processes multiple articles simultaneously, leveraging ADK's built-in parallelization to dramatically reduce total processing time.
+
+**Tool Integration**: The agent seamlessly combines built-in tools (Google Search), custom tools (web scraping, text extraction, file saving), and LLM reasoning, showing how AI agents can extend beyond pure language models to interact with the real world.
+
+### Real-World Value
+
+- **Time savings**: Get comprehensive news coverage in 3 minutes instead of hours
+- **Better understanding**: Synthesized digests provide context and connections between stories
+- **Personalization**: Specify topics, time ranges, and reading preferences
+- **Quality assurance**: Automated refinement ensures consistently high-quality output
+
+### What Makes This Special
+
+1. **Production-Ready Quality**: Not a proof-of-concept—this is a fully functional system with error handling, configuration management, and quality assurance
+2. **Educational Value**: The codebase is structured as a learning resource, with each concept clearly separated and documented
+3. **Real Problem Solving**: Addresses a genuine pain point (information overload) with a practical, usable solution
+4. **Modern AI Patterns**: Demonstrates cutting-edge multi-agent orchestration, quality loops, and tool integration
+5. **Extensibility**: Easy to adapt for other domains—research paper summaries, market analysis, technical documentation, etc.
+
+The Omniscan represents a practical application of modern AI agent frameworks to solve real-world information challenges. By combining specialized AI agents, automated quality assurance, and intelligent orchestration, it demonstrates how multi-agent systems can deliver value that exceeds the sum of their parts.
+
+---
+
 ## Overview
 
-This repository contains the **Daily Insights Agent**, a news‑focused AI system built with Google’s **Agent Development Kit (ADK)**.  
-You can think of it as a “3‑minute news digest” engine: you give it a topic and time range, and it:
+This repository contains the **Omniscan**, a news‑focused AI system built with Google's **Agent Development Kit (ADK)**.  
+You can think of it as a "3‑minute news digest" engine: you give it a topic and time range, and it:
 - Finds recent articles
 - Extracts and processes their content
 - Summarizes each article
 - Assembles everything into a short, high‑quality digest
 
-The intent is not just to build a working agent, but to **teach ADK architecture** through a concrete, realistic example.  
-I’ve structured the code so that you can map each concept (agents, tools, loops, validation, session state) to a specific file.
-
-If you want a step‑by‑step, command‑by‑command guide to running the agent, see `WALKTHROUGH.md`.
+For step-by-step instructions on how to run the agent, see [WALKTHROUGH.md](WALKTHROUGH.md).
 
 ---
 
